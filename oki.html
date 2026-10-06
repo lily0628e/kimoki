@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul{list-style: none;}
+        a{text-decoration: none; color: inherit;}
+        img{max-width: 100%;}
+        
+        body{
+            background-color: rgb(255, 245, 245);
+        }
+
+        /*-------------------- header------------------------ */
+        header{
+            width: 100%;
+            margin: 0 auto;
+            background-color: rgb(255, 60, 0);
+            color: rgb(240, 240, 240);
+        }
+        .nav{
+            width: 1460px;
+            height: 50px;
+            line-height: 50px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        .nav .gnb{
+            display: flex;
+            gap: 20px;
+        }
+        /* -------------------------main------------------------ */
+        main{
+            width: 1500px;
+            margin: 0 auto;
+        }
+        h2{
+            font-size: clamp(20px, 4vw, 40px);
+        }
+        .main-visual{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 100px;
+            gap: 30px;
+        }
+        .main-visual .text-area{
+            margin: 100px 0;
+        }
+        .main-visual .text-area p{
+            color: gray;
+            margin-top: 20px;
+        }
+        .main-visual .text-area .button{
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: rgb(255, 60, 0);
+            color: aliceblue;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .main-visual .text-area .button p{
+            color: aliceblue;
+        }
+        .main-visual .photo-area{
+            width: 600px;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 30px;
+        }
+        .main-visual .photo-area img{
+            width: 600px;
+            border-radius: 30px;
+        }
+        .tit{
+            font-size: clamp(18px, 4vw, 25px);
+            margin-bottom: 20px;
+        }
+        .profile .profile-box{
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 100px;
+        }
+        .profile .profile-box>li{
+            width: 450px;
+            height: 300px;
+            border-radius: 20px;
+        }
+        .profile .profile-box .first,
+        .profile .profile-box .second,
+        .profile .profile-box .third{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .profile .profile-box .first{
+            background-image: url(images/1.webp);
+        }
+        .profile .profile-box .second{
+            background-image: url(images/2.jpg);
+        }
+        .profile .profile-box .third{
+            background-image: url(images/3.jpg);
+        }
+        .profile .profile-box .white-line{
+            width: 450px;
+            height: 50px;
+            line-height: 50px;
+            background-color: #d33b3b73;
+            margin-top: 250px;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 0 20px 20px;
+        }
+        .color-album .photo-box{
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 100px;
+            width: 1460px;
+            padding: 20px;
+            background-color: #d68585;
+        }
+        .color-album .photo-box>li{
+            width: 450px;
+            height: 450px;
+            border-radius: 10px;
+        }
+        .color-album .photo-box .love,
+        .color-album .photo-box .angel,
+        .color-album .photo-box .spirit{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .color-album .photo-box .love{
+            background-image: url(images/4.webp);
+        }
+        .color-album .photo-box .angel{
+            background-image: url(images/5.jpg);
+        }
+        .color-album .photo-box .spirit{
+            background-image: url(images/6.jpg);
+        }
+        .color-album .photo-box .white-box{
+            width: 120px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #fff;
+            margin-top: 420px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            border-radius: 20px 20px 0 0;
+        }
+        /* -----------------------------footer--------------------------------------- */
+        footer{
+            width: 100%;
+            margin: 0 auto;
+            background-color: rgb(255, 70, 141);
+            color: rgb(240, 240, 240);
+            text-align: center;
+            padding: 50px 0;
+        }
+        .copyright h4{
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        /* -------------------------------------반응형-------------------------------- */
+        @media (max-width:1600px){
+            header{
+                width: 90%;
+            }
+            .nav{
+                width: 90%;
+                padding: 10px 20px;
+            }
+            main{
+                width: 90%;
+            }
+            .main-visual{
+                gap: 30px;
+            }
+            .main-visual .photo-area{
+                width: 45%;
+            }
+            .main-visual .photo-area img{
+                width: 100%;
+            }
+            .profile .profile-box{
+                gap: 10px;
+            }
+            .profile .profile-box>li{
+                width: 32%;
+            }
+            .profile .profile-box .white-line{
+                width: 100%;
+            }
+            .color-album .photo-box{
+                width: calc(100% - 20px);
+                padding: 10px;
+                gap: 10px;
+            }
+            .color-album .photo-box>li{
+                width: 32%;
+            }
+        }
+
+        @media (max-width:1000px){
+            .main-visual{
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .main-visual .text-area{
+                margin: 50px 0 30px;
+            }
+            .main-visual .photo-area{
+                width: 100%;
+            }
+            .main-visual .photo-area img{
+                width: 100%;
+            }
+            .profile .profile-box{
+                flex-direction: column;
+            }
+            .profile .profile-box>li{
+                width: 100%;
+            }
+            .profile .profile-box .white-line{
+                width: 100%;
+            }
+        }
+
+        @media (max-width:768px){
+            header{
+                width: 90%;
+            }
+            .nav{
+                width: 90%;
+                padding: 10px 0;
+            }
+            main{
+                width: 90%;
+            }
+            .main-visual{
+                gap: 30px;
+                margin-top: 50px;
+            }
+            .main-visual .text-area{
+                margin: 30px 0;
+            }
+            .main-visual .photo-area{
+                width: 100%;
+                height: auto;
+            }
+            .main-visual .photo-area img{
+                width: 100%;
+            }
+            .profile .profile-box{
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .profile .profile-box>li{
+                width: 100%;
+                height: 300px;
+            }
+            .profile .profile-box .white-line{
+                width: 100%;
+            }
+            .color-album .photo-box{
+                width: calc(100% - 20px);
+                gap: 10px;
+                padding: 10px;
+            }
+            .color-album .photo-box>li{
+                width: 30%;
+                height: 150px;
+            }
+            .color-album .photo-box .white-box{
+                width: 80px;
+                margin-top: 120px;
+                font-size: 12px;
+            }
+            footer{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <h1 class="logo">KIMOKI</h1>
+            <ul class="gnb">
+                <li><a href="#">공연</a></li>
+                <li><a href="#">음반</a></li>
+                <li><a href="#">협업</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="main-visual">
+            <div class="text-area">
+                <h2>재즈계의 이단아로 불리는<br> 색소포니스트 김오키</h2>
+                <p>
+                    재즈 뮤지션으로 불리길<br>
+                    거부하는 무규정 존재<br>
+                    김오키는 하고 싶은 걸 한다.
+                </p>
+                <div class="button">
+                    <p>인터뷰</p>
+                </div>
+            </div>
+            <div class="photo-area">
+                <img src="images/6003958_55620_3422.jpg" alt="김오키">
+            </div>
+        </section>
+        <section class="profile">
+            <div class="tit">
+                <h3>김오키의 한마디</h3>
+            </div>
+            <ul class="profile-box">
+                <li class="first">
+                    <div class="white-line">
+                        <p>재미있게 사는 것.</p>
+                    </div>
+                </li>
+                <li class="second">
+                    <div class="white-line">
+                        <p>다 똑같이 살 필요가 있나?</p>
+                    </div>
+                </li>
+                <li class="third">
+                    <div class="white-line">
+                        <p>그래서 난 좋다. 내가 튀니까.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section class="color-album">
+            <div class="tit">
+                <h3>앨범들</h3>
+            </div>
+            <ul class="photo-box">
+                <li class="love">
+                    <div class="white-box">
+                        <p>러브플라워</p>
+                    </div>
+                </li>
+                <li class="angel">
+                    <div class="white-box">
+                        <p>포 마이 엔젤</p>
+                    </div>
+                </li>
+                <li class="spirit">
+                    <div class="white-box">
+                        <p>스피릿선발대</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <div class="copyright">
+            <h4>김오키 KIMOKI</h4>
+            <p>
+                내 음악의 중심은 사랑이다<br>
+                2026 All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
